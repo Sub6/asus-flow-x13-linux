@@ -1,4 +1,4 @@
-# Things to do to install Linux on the Asus ROG Flow X13
+# Pop!_OS install on the Asus ROG Flow X13
 
 This shall be a guide on how to install Pop!_OS on the Asus ROG Flow X13. Partly forked from [this repo](https://github.com/CO-1/asus-flow-x13-linux)
 

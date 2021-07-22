@@ -1,6 +1,6 @@
 # Things to do to install Linux on the Asus ROG Flow X13
 
-This shall be the guide to install Linux or in this particular case Pop!_OS on the Asus ROG Flow X13. Partly forked from [this repo](https://github.com/CO-1/asus-flow-x13-linux)
+This shall be a guide on how to install Pop!_OS on the Asus ROG Flow X13. Partly forked from [this repo](https://github.com/CO-1/asus-flow-x13-linux)
 
 ## Preparation
 
@@ -19,7 +19,7 @@ The installation process should work without any problems. If you want to dual b
 
 Since 18.04 Pop!_OS is not utilizing GRUB but rather Systemd-boot, you can just choose the OS to boot by pressing ESC after boot to use the UEFI Menu.
 
-## Post Instalaltion
+## Post Installation
 
 ### Update and Upgrade
 Start by installing all updates:
@@ -41,7 +41,7 @@ Followed by updating the package list and installing the mainline tool
 sudo apt update
 sudo apt install mainline
 ```
-Start the mainline tool. For me with kernel 5.13.4 Audio seems to be fixed. So I recommend installing 5.13.4 or newer. Reboot your system, and test if most things are working.
+Start the mainline tool. Newer kernels fix a lot of issues for the ROG Flow X13. I would recommend installing 5.13.4 or newer. Reboot your system, and test if most things are working.
 
 ## Driver and other Fixes
 

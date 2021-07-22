@@ -4,13 +4,13 @@ This shall be a guide on how to install Pop!_OS on the Asus ROG Flow X13. Partly
 
 ## Preparation
 
-## Deactivate Secureboot
+### Deactivate Secureboot
 Go into your BIOS by spamming DEL during boot. Under advanced (F7), go into Security and deactivate Secureboot.
 
-## Deactivate Bitlocker Drive Encyrption
+### Deactivate Bitlocker Drive Encyrption
 Boot into Windows and deactivate Bitlocker Drive Encryption.
 
-## Resize Windows Partition
+### Resize Windows Partition
 Using Windows standard tools resize your main partition and make room for your linux install.
 
 ## Installation

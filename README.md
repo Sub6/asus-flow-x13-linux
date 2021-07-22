@@ -1,4 +1,51 @@
-# Linux on Asus Flow x13 
+# Things to do to install Linux on the Asus ROG Flow X13
+
+This shall be the guide to install Linux or in this particular case Pop!_OS on the Asus ROG Flow X13. Partly forked from [this repo](https://github.com/CO-1/asus-flow-x13-linux)
+
+## Preparation
+
+## Deactivate Secureboot
+Go into your BIOS by spamming DEL during boot. Under advanced (F7), go into Security and deactivate Secureboot.
+
+## Deactivate Bitlocker Drive Encyrption
+Boot into Windows and deactivate Bitlocker Drive Encryption.
+
+## Resize Windows Partition
+Using Windows standard tools resize your main partition and make room for your linux install.
+
+## Installation
+Download the image from [here](https://pop.system76.com/) Make a bootable Pop!_OS drive. (Remark: I only tested with 21.04)
+The installation process should work without any problems. If you want to dual boot, you have to make sure that during install you are not using the entire disk. You might need some extra partitions as the installation wizard will guide you.
+
+Since 18.04 Pop!_OS is not utilizing GRUB but rather Systemd-boot, you can just choose the OS to boot by pressing ESC after boot to use the UEFI Menu.
+
+## Post Instalaltion
+
+### Update and Upgrade
+Start by installing all updates:
+```sh
+sudo apt update
+sudo apt upgrade
+```
+After all packages have been upgraded reboot your system.
+
+### Installing the latest kernel
+The easiest way for ubuntu based distros is the Ubuntu Mainline Kernel Software. Start by adding the PPA:
+```sh
+sudo add-apt-repository ppa:cappelikan/ppa
+```
+
+Followed by updating the package list and installing the mainline tool
+
+```sh
+sudo apt update
+sudo apt install mainline
+```
+Start the mainline tool. For me with kernel 5.13.4 Audio seems to be fixed. So I recommend installing 5.13.4 or newer. Reboot your system, and test if most things are working.
+
+## Driver and other Fixes
+
+Forked from [this repo](https://github.com/CO-1/asus-flow-x13-linux) Might be obsolete with newer kernels.
 
 With small tweaks almost everything (surprisingly touch, pen input and camera) works fine .
 Notable exceptions is fingerprint.
@@ -17,15 +64,15 @@ sudo sh uninstall.sh
 ```
 
 
-## Keyboard
+### Keyboard
 Out of the box keyboard now works.
 
-## GPU
+### GPU
 
-### AMD iGPU
+#### AMD iGPU
 Works.
 
-### Nvidia
+#### Nvidia
 Nouveau drivers hangs laptop at boot. It can be blacklisted by appending
 `nouveau.blacklist=1` to kernel command line or by following commands as root
 ```sh
